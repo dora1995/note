@@ -1,0 +1,25 @@
+### 1. Icon组件
+
+雪碧图 - Font Icon -  SVG
+SVG优势：完全可控，即取即用
+
+图标库：kureact-fontawesome
+
+使用less的@each工具函数，快速构造样式
+
+动画的实现：
+- 使用css3的transition
+- 在display情景下，动画不起作用，所以想有display:none -> display:block;opacity:0 -> display:block;opacity:1：react-transition-group插件
+
+
+
+### 2. Transition组件
+使用react-transition-group来实现
+
+
+### 3. Storybook
+- 分开展示各个组件不同属性下的状态
+- 能追踪组件的行为并且具有属性调试功能
+- 可以为组件自动生成文档及说明
+
+后续需要用到了再补充
