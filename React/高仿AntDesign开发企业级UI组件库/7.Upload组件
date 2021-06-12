@@ -1,0 +1,21 @@
+### 1. Upload组件
+
+复杂的组件只不过是拥有更多的业务与需求功能而已
+
+先实现基础功能 -> 慢慢补充
+
+设置一个生命周期
+
+http请求的使用axios
+- 原生XHR：XMLHttpRequest，缺点：繁琐，使用分离
+- Fetch，基于promise的，需要对结果json操作；缺点：只对网络请求报错，对400，500当成成功；默认不会带cookie；不支持abort，不支持超时控制；没办法原生监测请求的进度
+- axios
+
+上传mock网站
+- JSONPlaceholder
+- mocky
+
+
+上传的两种方式：form表单（multipart/form-data （为发送二进制数据设计的）或application/x-www-form-urlencoded），js异步请求
+
+使用setState的传入函数的方式，获取到最新值；注意要返回一个新的对象，而非在原有基础上修改
