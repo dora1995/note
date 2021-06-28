@@ -1,0 +1,37 @@
+参考文章：
+1. https://overreacted.io/zh-hans/why-do-hooks-rely-on-call-order/
+2. https://overreacted.io/zh-hans/why-isnt-x-a-hook/
+3. https://overreacted.io/zh-hans/making-setinterval-declarative-with-react-hooks/
+
+### 什么是ReactHooks
+
+是**react16.8**以后，react新增的钩子API
+
+**目的是增加代码的可复用性，逻辑性，弥补~~函数组件没有生命周期~~（hooks本来也不是为函数组件带来生命周期，只能说是类生命周期效果），没有数据管理状态state的缺陷**
+
+react-hooks思想和初衷，也是把组件，颗粒化，单元化，形成独立的渲染环境，减少渲染次数，进而优化性能
+
+### ReactHooks带来的好处
+
+- 函数组件内也可以维护内部状态（以前函数组件仅能接收外部参数）
+- 组件间状态逻辑复用（之前只能通过propsRender或高阶组件的方式对代码进行包装）
+- 组件内逻辑分离（利用effect等写对应模块的逻辑）
+- class，this等语法特性的学习成本，可以在不用class的前提下也能使用React的更多特性
+
+
+### ReactHooks带来的成本
+- 与class组件的运行机制/使用方式等不太相同，最好要理解一下（学习成本）
+- 同步状态/状态更新策略/闭包陷阱等带来的心智负担
+- 对于状态改变会导致render，也需要在编码过程中注意优化（通病
+
+### 为什么我们要使用ReactHooks
+
+1. 可以让我们的代码的逻辑性更强，可以抽离公共的方法，公共组件
+2.  思想更趋近于函数式编程：用函数声明方式代替class声明方式，虽说class也是es6构造函数语法糖，但是react-hooks写起来更有函数即组件，无疑也提高代码的开发效率（无需像class声明组件那样写声明周期，写生命周期render函数等）
+3. 可能把庞大的class组件，化整为零成很多小组件，useMemo等方法让组件或者变量制定一个适合自己的独立的渲染空间，一定程度上可以提高性能，减少渲染次数
+
+
+### 在使用过程中要注意的
+1. 使用hook可能并不会一定优化性能，反而会影响性能，带来问题：https://juejin.cn/post/6847902217261809671
+2. hook不能放在流程控制语句/判断语句中，详见参考文章
+3. hook和class各有好处，对于业务复杂组件，用class实现有时候会更清晰；这要看具体场景，灵活使用即可，毕竟两者不冲突
