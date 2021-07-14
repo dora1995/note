@@ -14,6 +14,19 @@ A：JSX是JS的一种语法拓展，但不是模版语言，具有JS能力；其
 
 Q：为什么要用JSX，不用会有什么后果；
 A：可以不用，这样的话就要手写React.createElement，本身代码量提高了，而且在嵌套组件的编写中不好管理与理解，提高了维护难度；而JSX代码层次分明，嵌套清晰；
-JSX语法糖允许开发者使用最为熟悉的类HTML标签来创建虚拟DOM，在降低
+JSX语法糖允许开发者使用最为熟悉的类HTML标签来创建虚拟DOM，在降低学习成本的同时提升了开发效率
 
 Q：JSX背后的功能模块是什么，这个功能模块都做了什么事情
+
+
+createElement内部步骤：格式化数据，转换器
+
+- `createElement(type, config, children)`
+- 二次处理key，ref，self，source属性
+- 遍历config，筛出可以放进props中的属性
+- 提取子元素，推入childArray数组
+- 格式化defaultProps
+- **结合以上数据，调用ReactElement**
+
+ReactElement函数，只做了一件事：创建和组装，输出的实例本质上是以JavaScript对象形式存在的对DOM的描述
+最后调用React.render，将虚拟DOM渲染到容器中
