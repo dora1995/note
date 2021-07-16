@@ -1,6 +1,7 @@
 对React15与16版本的生命周期进行探讨、对比和总结
 
-
+> 如果对设计模式有所了解的话，就会知道，一个 API 并非越庞大越复杂才越优秀。或者说得更直接一点，庞大和复杂的 API 往往会带来维护层面的“灾难
+> 
 虚拟DOM：核心算法的基石：生成虚拟DOM调用React.render方法实现转换 -> 组件更新再次生成新的虚拟DOM，然后借助didd算法定位两次虚拟DOM的差异，然后做定向更新
 
 生命周期的本质：组件的灵魂与躯干
@@ -45,8 +46,14 @@ componentWillUnmount()
 #### getDerivedStateFormProps
 - getDerivedStateFormProps是一个静态方法，内部是访问不到this的
 - 该方法接收两个参数props，state，分别代表当前组件接收到的来自父组件的props和当前组件自身的state
-- 需要一个对象格式的返回值，React会根据它来更新组件的state：非覆盖，针对某个属性的定向更新
+- 需要一个对象格式的返回值，React会根据它来更新组件的state：**非覆盖**，针对某个属性的定向更新
+- 在16.3时，只有父组件更新才会触发；在16.3后，任何因素触发的组件更新都会触发
 
+#### getSnapshotBeforeUpdate
+- 返回值会作为第三个参数给到 componentDidUpdate
+- 它的执行时机是在 render 方法之后，真实 DOM 更新之前，在这个阶段里，我们可以同时获取到更新前的真实 DOM 和更新前后的 state&props 信息
 
 ### 15与16的对比
 1. 挂载阶段，componentWillMount移除，getDerivedStateFormProps新增：getDerivedStateFromProps 这个 API，其设计的初衷不是试图替换掉 componentWillMount，而是试图替换掉 componentWillReceiveProps，因此它有且仅有一个用途：**使用 props 来派生/更新 state**
+
+
