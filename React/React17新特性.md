@@ -30,4 +30,36 @@ React的onFocus和onBlur事件已在底层切换为原生的focusin和focusout�
 
 捕获事件（例如，onClickCapture）现在使用的是实际浏览器中的捕获监听器
 
-### 四、
+### 四、去除事件池
+
+在React17以前，如果想要用异步的方式使用事件e，则必须先调用调用 e.persist() 才可以，这是因为 React 在旧浏览器中重用了不同事件的事件对象，以提高性能，并将所有事件字段在它们之前设置为 null
+```
+function FunctionComponent(props) {
+  const [val, setVal] = useState("");
+
+  const handleChange = e => {
+    // setVal(e.target.value);
+    
+    // React 17以前，如果想用异步的方式使用事件e，必须要加上下面的e.persist()才可以
+    // e.persist();
+    // setVal(data => e.target.value);
+  };
+  return (
+    <div className="border">
+      <input type="text" value={val} onChange={handleChange} />
+    </div>
+  );
+}
+```
+
+### 五、副作用清理事件
+React17以前，当组件被卸载时，useEffect和useLayoutEffect的清理函数都是同步运行，但是对于大型应用程序来说，这不是理想选择，因为同步会减缓屏幕的过渡（例如，切换标签），因此React 17中的useEffect的清理函数异步执行，也就是说如果要卸载组件，则清理会在屏幕更新后运行。如果你某些情况下你仍然希望依靠同步执行，可以用 useLayoutEffect
+
+**在React中的UseEffect中，若有使用到引用类型，最好先对其值进行保存，因为其是异步执行的，可能值会变更从而引发错误**
+
+### 六、启发式更新算法更新
+
+React 17中更新了启发式更新算法，具体表现为曾经用于标记fiber节点更新优先级的expirationTime换成了为lanes，前者为普通数字，而后者则为32位的二进制，了解二进制运算的都比较熟悉了，这种二进制的lanes是可以指定几个优先级的，而不是像以前expirationTime只能标记一个
+
+之所以做这种改变，原因就是在于expirationTimes模型不能满足IO操作
+
