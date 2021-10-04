@@ -73,6 +73,34 @@ type C = ReverseTuple<[]> // []
 ```
 
 ```
-type UnwrapPromise <T extends any> = T extends Promise<infer A> ? A : Error
+type ReverseTuple<T extends any[]> = T extends [first: infer A, ...other: infer B] ? [...ReverseTuple<B>, A] : []
 ```
 
+27.`Flat<T>`
+
+```
+// Implement Flat<T> to flatten a tuple type
+type A = Flat<[1,2,3]> // [1,2,3]
+type B = Flat<[1,[2,3], [4,[5,[6]]]]> // [1,2,3,4,5,6]
+type C = Flat<[]> // []
+```
+
+```
+type Flat<T extends any[]> = T extends [first: infer A, ...other: infer B] ? A extends any[] ? [...Flat<A>, ...Flat<B>] : [A, ...Flat<B>] : [] 
+```
+
+28.`IsEmptyType<T>`
+
+```
+// Implement IsEmptyType<T> to check if T is empty type {}
+type A = IsEmptyType<string> // false
+type B = IsEmptyType<{a: 3}> // false
+type C = IsEmptyType<{}> // true
+type D = IsEmptyType<any> // false
+type E = IsEmptyType<object> // false
+type F = IsEmptyType<Object> // false
+```
+
+```
+type IsEmptyType<T> = T extends {[key:string]:string}? [keyof T] extends [never] ?  true : false : false  
+```
