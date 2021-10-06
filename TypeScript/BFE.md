@@ -104,3 +104,44 @@ type F = IsEmptyType<Object> // false
 ```
 type IsEmptyType<T> = T extends {[key:string]:string}? [keyof T] extends [never] ?  true : false : false  
 ```
+
+29.`Shift<T>`
+
+```
+// 请实现Shift<T>来去掉tuple的第一个元素
+type A = Shift<[1,2,3]> // [2,3]
+type B = Shift<[1]> // []
+type C = Shift<[]> // []
+```
+
+```
+type Shift<T extends any[]> = T extends [infer A, ...infer B] ? [...B] : []
+better: type Shift<T extends any[]> = T extends [any, ...infer S] ? [...S] : []
+```
+
+30.`IsAny<T>`
+
+```
+// 请实现IsAny<T>
+type A = IsAny<string> // false
+type B = IsAny<any> // true
+type C = IsAny<unknown> // false
+type D = IsAny<never> // false
+```
+
+```
+暂不理解，后面做
+```
+
+31.`Push<T, I>`
+
+```
+type A = Push<[1,2,3], 4> // [1,2,3,4]
+type B = Push<[1], 2> // [1, 2]
+type C = Push<[], string> // [string]
+```
+
+```
+type Push<T extends any[], I> = [...T, I]
+```
+
