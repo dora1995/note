@@ -145,3 +145,28 @@ type C = Push<[], string> // [string]
 type Push<T extends any[], I> = [...T, I]
 ```
 
+32.`RepeatString<T, C>`
+
+```
+type A = RepeatString<'a', 3> // 'aaa'
+type B = RepeatString<'a', 0> // ''
+```
+
+```
+暂不理解，后面做
+```
+
+33.`TupleToString<T>`
+
+```
+type A = TupleToString<['a']> // 'a'
+type B = TupleToString<['B', 'F', 'E']> // 'BFE'
+type C = TupleToString<[]> // ''
+```
+
+```
+type TupleToString<T extends string[]> = 
+  T extends [infer U,...infer R] ? R extends string[] ? `${T[0]}${TupleToString<R>}` : `${T[0]}` : ''
+```
+
+
