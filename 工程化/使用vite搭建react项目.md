@@ -72,6 +72,8 @@ export default defineConfig({
 ### 五、问题
 是否可以将`vite-plugin-react`换成`@vitejs/plugin-react-refresh`
 
+换了，@vitejs/plugin-react-refresh
+
 ### 六、自定义antd主题色
 
 修改vite.config.js文件：
