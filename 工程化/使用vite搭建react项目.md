@@ -96,4 +96,15 @@ export default defineConfig({
 })
 ```
 
+### 七、安装React-Router
+`yarn add react-router-dom@6`
+
+`yarn add react-router-config`：https://www.npmjs.com/package/react-router-config / https://www.jianshu.com/p/f1a3184ac81c
+
+关于react-router-config，因为router的升级而不适用，所以暂时不用了，后面看看有没有升级
+
+参考react-router文档使用即可，6版改动挺多的
+
+
+
 
