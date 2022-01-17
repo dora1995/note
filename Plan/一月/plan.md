@@ -17,6 +17,7 @@
 - 每日文章：https://juejin.cn/post/7043578962026430471 ,讲的是关于element组件的二次封装问题，对用json还是vnode的方式进行讨论，基本上同意作者的观点
 - ![image](https://user-images.githubusercontent.com/53267289/148888666-c3ac5663-ee5b-4bcd-97b3-750283c56e06.png)
 - [ ]在React中，在async函数里面调用多个setState函数，好像会变成单独执行，非批量；但是如果将setState函数放在同步代码内，就会批量执行；我想是因为异步执行机制的问题，**todo这个需要去验证一下**，看一下是为什么
+- [ ]自定义hook的最佳实践
 
 2022.1.11
 - 每日文章：https://zhuanlan.zhihu.com/p/454831783 ,是作者的一个年度总结和计划，具有参考价值，希望自己也加油；其中有提到**react等源码，毛选，鲁迅作品，中国通史，面试官修为**，可以吸取
@@ -28,8 +29,11 @@
 - 看完了时间朋友第三章
 
 2022.1.13
-- 每日文章：
+- 每日文章：https://github.com/dora1995/note/blob/main/%E5%B7%A5%E7%A8%8B%E5%8C%96/%E6%BA%90%E7%A0%81%E8%B0%83%E8%AF%95.md
 - [x]输出vscode调试总结：https://github.com/dora1995/note/blob/main/%E5%B7%A5%E7%A8%8B%E5%8C%96/%E6%BA%90%E7%A0%81%E8%B0%83%E8%AF%95.md ；今天主要是想学一下如何使用vscode进行代码调试，用于后续lerna调试使用
 
+2020.1.14 / 2020.1.15 / 2020.1.16
+- 不知道干嘛去了
 
-
+2020.1.17
+- 每日文章：
