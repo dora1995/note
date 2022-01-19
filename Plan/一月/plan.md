@@ -42,3 +42,7 @@
 2020.1.18
 - 每日文章：https://blog.csdn.net/kid_2412/article/details/106062531 ，关于技术方案的思考与过程
 - 疯狂加班中，没有搞其他事情
+
+2020.1.19
+- 每日文章：https://zhuanlan.zhihu.com/p/138798310 ，要开始对flutter进行一个调研
+- 今天的学习是加快速度先把书看完，最后还要复习笔记一遍，然后总结，归纳出todolist
