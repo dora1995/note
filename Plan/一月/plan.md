@@ -50,4 +50,7 @@
 2020.1.21
 - 每日文章：https://juejin.cn/post/7039108357554176037#heading-20 ，今天突发其想要了解一下单元测试，以及在react项目中做单元测试都是做哪些内容
 - ![image](https://user-images.githubusercontent.com/53267289/150478621-13caf0e6-1879-42c5-b663-1aa592800f4f.png)
+- https://juejin.cn/post/6968821346088255525
+- https://juejin.cn/post/6844903654294716423
+- https://juejin.cn/post/6946008649026240519 ，这个好
 
