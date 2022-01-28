@@ -58,5 +58,11 @@
 
 2022.1.22 - 2022.1.27
 - 这些时间一直在加班，学习是有的，但忘记更新这里了
-- 每日文章：
+- 每日文章：https://juejin.cn/post/7045057475845816357?utm_source=gold_browser_extension
+- 每日文章：https://juejin.cn/post/7030584939020042254 ，有关调试代码的，但写得不是很全，蜻蜓点水
+
+2022.1.28
+- 每日文章：https://zhuanlan.zhihu.com/p/53314373 ，为什么0.1 + 0.2 !== 0.3
+- 每日文章：https://www.ruanyifeng.com/blog/2015/05/require.html , node的require源码解读，要多多看
+- 
 
