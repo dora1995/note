@@ -14,3 +14,11 @@
 #### 调试
 - 在webStorm中的代码加上红点
 - 使用webStorm的调试模式：待学习，用vscode代替
+
+
+### 二、实现原理
+
+1. 通过import-local优先调用本地lerna命令
+2. 通过Yargs生成脚手架，先注册全局属性，再注册命令，最后通过parse方法解析参数
+3. lerna命令注册时需要传入builder和handler两个方法，builder方法用于注册命令专属的options，handler用来处理命令的业务逻辑
+4. lerna通过配置npm本地依赖的方式进行本地开发，具体写法是在package.json的依赖中写入，lerna在publish时会自动将该路径替换
