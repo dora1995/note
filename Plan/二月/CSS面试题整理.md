@@ -110,4 +110,36 @@ BFC它决定了元素如何对其内容进行定位，以及与其它元素的�
 - 块元素：独占一行，并且有自动填满父元素，可以设置margin和pading以及高度和宽度
 - 行元素：不会独占一行，width和height会失效，并且在垂直方向的padding和margin会失效
 
+### 10.css文字超出显示省略号
+
+单行
+```css
+white-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis;
+```
+
+多行
+```css
+word-break: break-all;
+text-overflow: ellipsis;
+overflow: hidden;
+display: -webkit-box;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;
+```
+
+### 11.visibility=hidden, opacity=0，display:none的区别
+
+- opacity=0，该元素隐藏起来了，但不会改变页面布局，并且，如果该元素已经绑定一些事件，如 click 事件，那么点击该区域，也能触发点击事件的
+- visibility=hidden，该元素隐藏起来了，但不会改变页面布局，但是不会触发该元素已经绑定的事件
+- display=none， 把元素隐藏起来，并且会改变页面布局，可以理解成在页面中把该元素删除掉一样
+
+### 12.清除浮动
+- 方法一：使用带clear属性的空元素在浮动元素后使用一个空元素如<div class="clear"></div>，并在CSS中赋予：clear { clear:both;} 属性即可清理浮动
+- 方法二：使用CSS的overflow属性给浮动元素的容器添加overflow:hidden
+- 方法三：使用邻接元素处理什么都不做，给浮动元素后面的元素添加clear属性
+- 方法四：使用CSS的:after伪元素
+
+
 
