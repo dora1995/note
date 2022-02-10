@@ -34,6 +34,7 @@ ie盒子模型的范围也包括margin、border、padding、content，width包�
 ### 4.BFC(Block formatting Context块级格式化上下文)
 
 https://juejin.cn/post/6844904178037293070
+
 https://juejin.cn/post/6950082193632788493
 
 BFC它决定了元素如何对其内容进行定位，以及与其它元素的关系和相互作用，当涉及到可视化布局时，Block Formatting Context提供了一个环境，HTML在这个环境中按照一定的规则进行布局
@@ -71,6 +72,42 @@ BFC它决定了元素如何对其内容进行定位，以及与其它元素的�
 
 ### 6.Flex
 
+设为Flex布局以后，子元素的float、clear和vertical-align属性将失效
 
+父元素：
+- flex-direction：row | row-reverse | column | column-reverse
+- flex-wrap：nowrap | wrap（换行，头在上） | wrap-reverse（换行，尾在上）
+- flex-flow：flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap
+- justify-content：flex-start | flex-end | center | space-between | space-around
+- align-items：flex-start | flex-end | center | baseline | stretch （交叉轴）
+- align-content：flex-start | flex-end | center | space-between | space-around | stretch
+
+子元素：
+- order：数值越小，排列越靠前
+- flex-grow：定义项目的放大比例
+- flex-shrink：定义项目的缩小比例
+- flex-basis
+- flex：flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto；该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)
+- align-self：允许单个项目有与其他项目不一样的对齐方式
+
+### 7.垂直居中的方法
+
+1. margin:auto
+2. 定位 + transform
+3. flex
+
+### 8.JS动画与CSS动画的区别
+
+- 渲染线程分为main thread和compositor thread，如果css动画只改变transform和opacity，这时整个CSS动画得以在compositor trhead 完成（而 JS 动画则会在 main thread 执行，然后触发compositor thread 进行下一步操作），特别注意的是如果改变transform和opacity是不会layout或者paint的
+- 功能涵盖面上，JS比CSS大
+- 实现/重构难度不一，CSS比JS更加简单，性能调优方向固定
+- 对帧速表现不好的低版本浏览器，css3可以做到自然降级
+- css动画有天然事件支持
+- css3有兼容性问题   
+
+### 9.块元素和行元素
+
+- 块元素：独占一行，并且有自动填满父元素，可以设置margin和pading以及高度和宽度
+- 行元素：不会独占一行，width和height会失效，并且在垂直方向的padding和margin会失效
 
 
