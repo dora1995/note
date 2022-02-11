@@ -141,5 +141,11 @@ display: -webkit-box;
 - 方法三：使用邻接元素处理什么都不做，给浮动元素后面的元素添加clear属性
 - 方法四：使用CSS的:after伪元素
 
+### 13.实现自适应正方形
+
+- vw单位：相对于视窗的百分比
+- 设置垂直方向的padding撑开容器![image](https://user-images.githubusercontent.com/53267289/153527516-ed619fb1-22a4-4d0c-9037-c86984b8d9d5.png)；margin, padding 的百分比数值是相对 父元素宽度 的宽度计算的。由此可以发现只需将元素垂直方向的一个 padding 值设定为与 width 相同的百分比就可以制作出自适应正方形
+- 利用伪元素的 margin(padding)-top 撑开容器
+
 
 
