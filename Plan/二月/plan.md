@@ -18,3 +18,7 @@
 2022.2.8 - 2022.2.10
 - 每日文章：https://juejin.cn/post/6993358764481085453?utm_source=gold_browser_extension ，关于缓存的，后续总结可以用上
 - [x]今天整理CSS部分的面试题
+
+2022.2.11
+- 每日文章：https://mp.weixin.qq.com/s/TbVQsuZKBa_bmERxlqO8qQ ，关于TypeScript的一些使用思维
+- 每日文章：https://baike.baidu.com/item/%E7%B3%BB%E7%BB%9F%E8%AE%BA/1133820?fr=aladdin ，系统论思想，是关于架构设计的一个理论
