@@ -53,3 +53,11 @@
 - 晚点学，要出去
 - 每日文章：https://www.cnblogs.com/goloving/p/9196066.html ，什么是SSE
 
+2022.2.20
+- 周末休息一天
+
+2022.2.21
+- 把架构师第三周看完了，并跟着把代码敲了
+- 每日文章：https://github.com/type-challenges/type-challenges 
+- 
+
