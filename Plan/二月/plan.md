@@ -59,5 +59,5 @@
 2022.2.21
 - 把架构师第三周看完了，并跟着把代码敲了
 - 每日文章：https://github.com/type-challenges/type-challenges 
-- 
+- git对文件名大小写不敏感！！
 
