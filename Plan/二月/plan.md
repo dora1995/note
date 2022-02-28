@@ -61,3 +61,10 @@
 - 每日文章：https://github.com/type-challenges/type-challenges 
 - git对文件名大小写不敏感！！
 
+2022.2.22 - 2022.2.27
+- 断断续续看徐小夕的文章，还蛮多的
+- 休息了后三天
+
+2022.2.28
+- 每日文章：https://juejin.cn/post/7045057475845816357
+
