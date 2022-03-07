@@ -7,7 +7,7 @@
 - 非装饰性图片必须加alt
 - **提高网站速度：网站速度是搜索引擎排序的一个重要指标**
 
-### 2. <img>的title和alt有什么区别
+### 2. `<img>`的title和alt有什么区别
 - 通常当鼠标滑动到元素上的时候显示
 - alt是<img>的特有属性，是图片内容的等价描述，用于图片无法加载时显示、读屏器阅读图片。可提图片高可访问性，除了纯装饰图片外都必须设置有意义的值，搜索引擎会重点分析
 
@@ -33,3 +33,98 @@ https://github.com/dora1995/note/blob/main/%E9%9D%A2%E8%AF%95/%E5%89%8D%E7%AB%AF
 - 500 Internal Server Error 最常见的服务器端错误。
 - 503 Service Unavailable 服务器端暂时无法处理请求（可能是过载或维护）。
 
+### 6. html5有哪些新特性
+- **新增选择器 document.querySelector、document.querySelectorAll**
+- **拖拽释放(Drag and drop) API**
+- **媒体播放的 video 和 audio**
+- **本地存储 localStorage 和 sessionStorage**
+- 离线应用 manifest
+- 桌面通知 Notifications
+- **语意化标签 article、footer、header、nav、section**
+- **增强表单控件 calendar、date、time、email、url、search**
+- 地理位置 Geolocation
+- **多任务 webworker**
+- **全双工通信协议 websocket**
+- **历史管理 history**
+- 跨域资源共享(CORS) Access-Control-Allow-Origin
+- 页面可见性改变事件 visibilitychange
+- **跨窗口通信 PostMessage**
+- Form Data 对象
+- **绘画 canvas**
+- `data-*` 为元素增加自定义属性
+
+### 7. 请描述一下 cookies，sessionStorage 和 localStorage 的区别
+cookie：
+- 是网站为了标示用户身份而储存在用户本地终端上的数据
+- 始终在同源的http请求中携带（即使不需要）
+- 大小4k
+- 可以设置过期时间，设置已经过去的时间删除cookie
+
+localStorage/sessionStorage：
+- 不会自动把数据发给服务器，仅在本地保存
+- H5新特性
+- session在页面关闭时清除，local永久存在
+- 大小5m
+
+### 8. iframe有那些缺点
+- **iframe会阻塞主页面的Onload事件**
+- **搜索引擎的检索程序无法解读这种页面，不利于SEO**
+- iframe和主页面**共享连接池**，而浏览器对相同域的连接有限制，所以会影响页面的并行加载
+- 使用iframe之前需要考虑这两个缺点。如果需要使用iframe，最好是通过javascript动态给iframe添加src属性值，这样可以绕开以上两个问题
+
+### 9. 行内元素和块级元素有什么区别？
+- 行内元素不可以设置宽高，不独占一行
+- 块级元素可以设置宽高，独占一行
+
+### 10. Canvas和SVG有什么区别？
+- svg绘制出来的每一个图形的元素都是独立的DOM节点，能够方便的绑定事件或用来修改。canvas输出的是一整幅画布
+- svg输出的图形是矢量图形，后期可以修改参数来自由放大缩小，不会失真和锯齿。而canvas输出标量画布，就像一张图片一样，放大会失真或者锯齿
+
+### 11. viewport
+```
+ <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+// width            设置viewport宽度，为一个正整数，或字符串‘device-width’
+// device-width     设备宽度
+// height           设置viewport高度，一般设置了宽度，会自动解析出高度，可以不用设置
+// initial-scale    默认缩放比例（初始缩放比例），为一个数字，可以带小数
+// minimum-scale    允许用户最小缩放比例，为一个数字，可以带小数
+// maximum-scale    允许用户最大缩放比例，为一个数字，可以带小数
+// user-scalable    是否允许手动缩放
+```
+Q:怎样处理移动端1px被渲染成2px问题
+A:
+```
+1.局部处理
+- meta标签中的 viewport属性 ，initial-scale 设置为 1 
+- rem 按照设计稿标准走，外加利用transform 的scale(0.5) 缩小一倍即可；
+2.全局处理
+- meta标签中的 viewport属性 ，initial-scale 设置为 0.5
+- rem 按照设计稿标准走即可
+```
+
+### 12. div+css的布局较table布局有什么优点？
+- 改版的时候更方便 只要改css文件。
+- 页面加载速度更快、结构化清晰、页面显示简洁。
+- 表现与结构相分离。
+- 易于优化（seo）搜索引擎更友好，排名更容易靠前。
+
+### 13. 你能描述一下渐进增强和优雅降级之间的不同吗
+- 渐进增强：针对低版本浏览器进行构建页面，保证最基本的功能，然后再针对高级浏览器进行效果、交互等改进和追加功能达到更好的用户体验。
+- 优雅降级：一开始就构建完整的功能，然后再针对低版本浏览器进行兼容。
+
+区别：优雅降级是从复杂的现状开始，并试图减少用户体验的供给，而渐进增强则是从一个非常基础的，能够起作用的版本开始，并不断扩充，以适应未来环境的需要。降级（功能衰减）意味着往回看；而渐进增强则意味着朝前看，同时保证其根基处于安全地带
+
+### 14. 为什么利用多个域名来存储网站资源会更有效？
+- CDN缓存更方便
+- 突破浏览器并发限制
+- 节约cookie带宽
+- 节约主域名的连接数，优化页面响应速度
+- 防止不必要的安全问题
+
+### 15. 简述一下src与href的区别
+- src用于替换当前元素，href用于在当前文档和引用资源之间确立联系。
+- src是source的缩写，指向外部资源的位置，指向的内容将会嵌入到文档中当前标签所在位置；在请求src资源时会将其指向的资源下载并应用到文档内，例如js脚本，img图片和frame等元素
+- href是Hypertext Reference的缩写，指向网络资源所在位置，建立和当前元素（锚点）或当前文档（链接）之间的链接，如果我们在文档中添加
+- `<link href="common.css" rel="stylesheet"/>`那么浏览器会识别该文档为css文件，就会并行下载资源并且不会停止对当前文档的处理。这也是为什么建议使用link方式来加载css，而不是使用@import方式
+
+`<script src ="js.js"></script>`当浏览器解析到该元素时，会暂停其他资源的下载和处理，**直到将该资源加载、编译、执行完毕**，图片和框架等元素也如此，类似于将所指向资源嵌入当前标签内。这也是为什么将js脚本放在底部而不是头部
