@@ -78,3 +78,6 @@ todo：需要创建 layouts/error.vue 作为错误页面，不然nuxt提供的�
 </script>
 ```
 
+### 插件
+https://www.nuxtjs.cn/guide/plugins
+
