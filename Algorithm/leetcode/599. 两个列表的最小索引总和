@@ -1,3 +1,0 @@
-https://leetcode-cn.com/problems/minimum-index-sum-of-two-lists/
-
-看完题的描述，第一个想到的是：循环其中一个数组，判断子元素是否存在另外一个数组中，若存在，将它们的下标和记录起来，最后输出下标和最小的那一组
