@@ -128,3 +128,83 @@ A:
 - `<link href="common.css" rel="stylesheet"/>`那么浏览器会识别该文档为css文件，就会并行下载资源并且不会停止对当前文档的处理。这也是为什么建议使用link方式来加载css，而不是使用@import方式
 
 `<script src ="js.js"></script>`当浏览器解析到该元素时，会暂停其他资源的下载和处理，**直到将该资源加载、编译、执行完毕**，图片和框架等元素也如此，类似于将所指向资源嵌入当前标签内。这也是为什么将js脚本放在底部而不是头部
+
+### 16. 知道的网页制作会用到的图片格式有哪些？
+
+png-8、png-24、jpeg、gif、svg，但是上面的那些都不是面试官想要的最后答案。面试官希望听到是Webp,Apng。（是否有关注新技术，新鲜事物）
+
+- Webp：WebP格式，谷歌（google）开发的一种旨在加快图片加载速度的图片格式。图片压缩体积大约只有JPEG的2/3，并能节省大量的服务器带宽资源和数据空间。Facebook Ebay等知名网站已经开始测试并使用WebP格式。
+- 在质量相同的情况下，WebP格式图像的体积要比JPEG格式图像小40%。
+- Apng：全称是“Animated Portable Network Graphics”, 是PNG的位图动画扩展，可以实现png格式的动态图片效果。04年诞生，但一直得不到各大浏览器厂商的支持，直到日前得到 iOS safari 8的支持，有望代替GIF成为下一代动态图标准
+
+### 17. 一个页面上有大量的图片（大型电商网站），加载很慢，你有哪些方法优化这些图片的加载，给用户更好的体验
+
+- 图片懒加载，在页面上的未可视区域可以添加一个滚动事件，判断图片位置与浏览器顶端的距离与页面的距离，如果前者小于后者，优先加载。
+- 如果为幻灯片、相册等，可以使用图片预加载技术，将当前展示图片的前一张和后一张优先下载。
+- 如果图片为css图片，可以使用CSSsprite，SVGsprite，Iconfont、Base64等技术。
+- 如果图片过大，可以使用特殊编码的图片，加载时会先加载一张压缩的特别厉害的缩略图，以提高用户体验。
+- 如果图片展示区域小于图片的真实大小，则因在服务器端根据业务需要先行进行图片压缩，图片压缩后大小与展示一致。
+
+### 18. 排序有哪些
+
+- 直接插入
+- 希尔排序
+- 冒泡排序
+- 快速排序
+- 选择排序
+- 堆排序
+- 归并排序
+
+### 19. HTTP request报文结构是怎样的
+
+- 首行是Request-Line包括：请求方法，请求URI，协议版本，CRLF
+- 首行之后是若干行请求头，包括general-header，request-header或者entity-header，每个一行以CRLF结束
+- 请求头和消息实体之间有一个CRLF分隔
+- 根据实际请求需要可能包含一个消息实体 一个请求报文例子如下：
+
+```
+GET /Protocols/rfc2616/rfc2616-sec5.html HTTP/1.1
+Host: www.w3.org
+Connection: keep-alive
+Cache-Control: max-age=0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
+Referer: https://www.google.com.hk/
+Accept-Encoding: gzip,deflate,sdch
+Accept-Language: zh-CN,zh;q=0.8,en;q=0.6
+Cookie: authorstyle=yes
+If-None-Match: "2cc8-3e3073913b100"
+If-Modified-Since: Wed, 01 Sep 2004 13:24:52 GMT
+
+name=qiu&age=25
+```
+
+### 20. HTTP response报文结构是怎样的
+- 首行是状态行包括：HTTP版本，状态码，状态描述，后面跟一个CRLF
+- 首行之后是若干行响应头，包括：通用头部，响应头部，实体头部
+- 响应头部和响应实体之间用一个CRLF空行分隔
+- 最后是一个可能的消息实体 响应报文例子如下：
+
+```
+HTTP/1.1 200 OK
+Date: Tue, 08 Jul 2014 05:28:43 GMT
+Server: Apache/2
+Last-Modified: Wed, 01 Sep 2004 13:24:52 GMT
+ETag: "40d7-3e3073913b100"
+Accept-Ranges: bytes
+Content-Length: 16599
+Cache-Control: max-age=21600
+Expires: Tue, 08 Jul 2014 11:28:43 GMT
+P3P: policyref="http://www.w3.org/2001/05/P3P/p3p.xml"
+Content-Type: text/html; charset=iso-8859-1
+
+{"name": "qiu", "age": 25}
+```
+
+### 21. 请你谈谈Cookie的弊端
+
+- cookie虽然在持久保存客户端数据提供了方便，分担了服务器存储的负担，但还是有很多局限性的
+- 每个特定的域名下最多生成20个cookie？
+- IE6或更低版本最多20个cookie，IE7和之后的版本最后可以有50个cookie，Firefox最多50个cookie，chrome和Safari没有做硬性限制？
+- cookie 的最大大约为 4096 字节，为了兼容性，一般设置不超过 4095 字节
+- 如果 cookie 被人拦截了，就可以取得所有的 session 信息
