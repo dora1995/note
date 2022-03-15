@@ -206,3 +206,14 @@ position、display、float、width、height、margin、padding、top、left、ri
 - 基本原理是利用CSS3媒体查询，为不同尺寸的设备适配不同样式
 - 对于低版本的IE，可采用JS获取屏幕宽度，然后通过resize方法来实现兼容
 
+### 23. 如何修改Chrome记住密码后自动填充表单的黄色背景
+- 产生原因：由于Chrome默认会给自动填充的input表单加上 input:-webkit-autofill 私有属性造成的
+- 解决方案1：在form标签上直接关闭了表单的自动填充：autocomplete="off"
+- 解决方案2：input:-webkit-autofill { background-color: transparent; }
+
+### 24. 设置元素浮动后，该元素的 display 值会如何变化
+
+设置元素浮动后，该元素的 display 值自动变成 block
+
+
+
