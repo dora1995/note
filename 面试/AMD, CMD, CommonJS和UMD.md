@@ -133,6 +133,10 @@ UMD先判断是否支持Node.js的模块（exports）是否存在，存在则使
 // todo
 
 
+https://juejin.cn/post/6844903961128861704
+
+https://fki4c3ici6.feishu.cn/docs/doccn6t4RrQJeRpX1QXIq0Xkijc
+
 
 
 
